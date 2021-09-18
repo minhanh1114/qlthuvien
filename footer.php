@@ -13,7 +13,7 @@
               </div>
               <div class="col-sm-1 item-2">
                 <div class="icon-facebook">
-                  <a href=""><i class="fa fa-facebook facebook" aria-hidden="true"></i></a>
+                  <a href="https://www.facebook.com/truongtuan28122001"><i class="fa fa-facebook facebook" aria-hidden="true"></i></a>
                 </div>
                 <div class="icon-twitter">
                   <a href=""><i class="fa fa-twitter  twitter " aria-hidden="true"></i></a>
@@ -22,7 +22,7 @@
                   <a href=""> <i class="fa fa-instagram  instagram" aria-hidden="true"></i></a>
                 </div>
                 <div class="icon-youtube">
-                  <a href=""> <i class="fa fa-youtube youtube" aria-hidden="true"></i></a>
+                  <a href=""><i class="fa fa-youtube youtube" aria-hidden="true"></i></a>
                 </div>
               </div>
               <div class="col-sm-3">
