@@ -1,0 +1,62 @@
+#horizontalmenu {
+    
+    border: 1px solid rgb(161, 151, 151);
+    height: 700px;
+}
+
+#horizontalmenu >.list_menu
+ {
+padding:0; 
+margin:0; 
+list-style:none;
+
+}
+#horizontalmenu li button i{
+    font-size: 20px;
+}
+#horizontalmenu li button{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    /* padding: 15px 20px; */
+}
+#horizontalmenu li button:hover{
+    background-color: bisque;
+}
+#horizontalmenu li 
+{
+ 
+ width: 100%;
+
+display:block;
+ 
+}
+#horizontalmenu li ul
+{
+width:  100%;
+  display:none; 
+  position:relative;
+ /* ẩn thẻ sub đi  */
+}
+ .sub_menu
+{
+display: block !important;
+
+width: 100%; 
+}  
+#horizontalmenu li ul li:hover{
+    background-color: antiquewhite;
+}
+#horizontalmenu li ul li
+{
+    display: block;
+    padding:10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+.row
+{
+}

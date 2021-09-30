@@ -26,10 +26,14 @@ code {
     letter-spacing: 0.08em
 }
 .navbar-expand-lg ,
-.navbar-nav ,
-.dropdown-menu {
+.navbar-nav 
+ {
 position:static !important;
 }
-.navbar-nav{
+#menu{
+position:static !important;
+
+}
+#nav_drop{
     display:block !important;
 }

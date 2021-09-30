@@ -45,5 +45,12 @@ class connection_db{
         $this->result = mysqli_query($this->conn,$sql);
         
     }
+
+    function no_query_1($sql)
+    {
+
+       return $this->result = mysqli_query($this->conn,$sql);
+        
+    }
 }
 ?>

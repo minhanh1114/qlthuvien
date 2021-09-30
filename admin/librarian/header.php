@@ -57,6 +57,7 @@ $(function(){
 <?php
 include 'book.class.php';
 include 'admin.class.php';
+include 'menu.class.php';
 if(isset($_POST['submit']))
 {
 	 

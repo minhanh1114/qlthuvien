@@ -1,15 +1,17 @@
-<?php include('header.php'); ?>
-<?php include('navbar.php'); ?>
+<?php include('header.php'); 
+$dang_nhap = new admin();
+
+
+?>
+
     <div class="container">
 		<div class="margin-top">
 			<div class="row">	
 			<div class="span12">
-					<div class="sti">
-						<img src="../LMS/E.B. Magalona.png" class="img-rounded">
-					</div>
+					
 				<div class="login">
 				<div class="log_txt">
-				<p><strong>Please Enter the Details Below..</strong></p>
+				<p><strong>Nhập Thông tin Tài khoản Admin</strong></p>
 				</div>
 						<form class="form-horizontal" method="POST">
 								<div class="control-group">
@@ -26,25 +28,33 @@
 								</div>
 								<div class="control-group">
 									<div class="controls">
-									<button id="login" name="submit" type="submit" class="btn"><i class="icon-signin icon-large"></i>&nbsp;Submit</button>
+									<button id="login" name="submit_login" type="submit" class="btn"><i class="icon-signin icon-large"></i>&nbsp;Submit</button>
 								</div>
 								</div>
 								
 								<?php
-								if (isset($_POST['submit'])){
-								session_start();
+
+								if (isset($_POST['submit_login'])){
+								
 								$username = $_POST['username'];
 								$password = $_POST['password'];
-								$query = "SELECT * FROM `admin` WHERE username='$username' AND password='$password'";
-								$result = mysqli_query($conn,$query)or die(mysqli_error());
-								$num_row = mysqli_num_rows($result);
-									$row=mysqli_fetch_array($result);
+
+					//làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
+					//mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
+					
+								$username = strip_tags($username);
+								$username = addslashes($username);
+								$password = strip_tags($password);
+								$password = addslashes($password);
+
+								$num_row=$dang_nhap->login($username,$password);
+															
 									if( $num_row > 0 ) {
 										header('location:dashboard.php');
-								$_SESSION['id']=$row['user_id'];
+								
 									}
 									else{ ?>
-								<div class="alert alert-danger">Access Denied</div>		
+								<div class="alert alert-danger">Đăng nhập thất bại</div>		
 								<?php
 								}}
 								?>

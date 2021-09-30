@@ -18,7 +18,7 @@ $results=$table->getall();
 										<li   class="active"><a href="books.php">All</a></li>
 										<li><a href="new_books.php">Sách Mới</a></li>
 										<li><a href="old_books.php">sách cũ</a></li>	
-										<li><a href="damage.php">sách hot</a></li>	
+										<li><a href="hot_book.php">sách hot</a></li>	
 									</ul>
 						<!--  -->
 						

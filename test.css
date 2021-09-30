@@ -55,6 +55,7 @@
     background-color: #999;
     cursor: pointer;
     transition: background-color 0.25s linear;
+    
   }
   .slider-dots li.active {
     background-color: white;

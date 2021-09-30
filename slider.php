@@ -1,11 +1,8 @@
-
-      <!-- slider -->
-      
-      <div class="content-second">
+<div class="content-second">
         <div class="background">
-          <div class="header_h1">
+          <div class="header_h1">    
             <h1>THƯ VIỆN SỐ</h1>
-            <p>Thư viện trực tuyến của bạn, hoạt động 24/7, từ nhà và khi đang di chuyển.</p>
+            <p>Thư viện trực tuyến của bạn, hoạt động 24/7, từ nhà và khi đang di chuyển.</p>     
           </div>
             <div class="slider_1">
               <i class="fa fa-chevron-left slider-prev_1" aria-hidden="true"></i>
@@ -15,69 +12,36 @@
                   <li class="slider-dot-item" data-index="2"></li>
                   <li class="slider-dot-item" data-index="3"></li>
                 </ul>
+                <?php
+               $results = $book->getall_11();      
+								
+                ?>
                 <div class="slider-wrapper_1">
                     <div class="slider-main_1">
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-1.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-2.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-3.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-4.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-5.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-6.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-7.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-8.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-9.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-9.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1">
-                                  <img src="./assets/images/slide-2-9.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
+                          <?php
+                    foreach ($results as $row){
+                                          ?>
+                            
+                              <div class="slider-item-1">
+                                <a href="view_book.php?id=<?php echo $row['ma_sach'] ?>">
+                                  <img src="./admin/librarian/upload/<?php echo $row['anh']; ?>" alt="">
+                                 
+                                  <h3><?php echo $row['ten_sach']; ?></h3> </a>
+                                  <div><?php echo $row['mo_ta']; ?></div>
+                                                              
+                              </div>
+                                  <?php
+                                    }
+                                    ?>
+                            
                             <div class="slider-item-1 ">
                                   <a href=""><h3 class="text-center mt-5">Xem Tất Cả</h3></a>
                             </div>
+                            
                         
                     </div>
                 </div>
+                
                 <i class="fa fa-chevron-right slider-next_1" aria-hidden="true"></i>
 
         
@@ -108,61 +72,20 @@
                 </ul>
                 <div class="slider-wrapper_1">
                     <div class="slider-main_1 slider-main_2">
+                    <?php
+                    $results = $book->getall_baby_11();
+                    foreach ($results as $row){
+                                          ?>
                             <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-3-1.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-3-2.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-3-3.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-3-4.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-3-5.png" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-3-6.png" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-2-7.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-2-8.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-2-9.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-2-9.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
-                            <div class="slider-item-1 slider-item-2">
-                                  <img src="./assets/images/slide-2-9.jpg" alt="">
-                                  <h3>Học Các Kĩ Năng Mới Với Linkdln Learning</h3>
-                                  <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit expedita doloremque atque sed, possimus dolorum impedit, mod!</div>
-                            </div>
+                                    <img src="./admin/librarian/upload/<?php echo $row['anh']; ?>" alt="">
+                                    <a href="">
+                                    <h3><?php echo $row['ten_sach']; ?></h3> </a>
+                                    <div><?php echo $row['mo_ta']; ?></div>
+                              </div>
+                            <?php
+                              }
+                              ?>
+                            
                             <div class="slider-item-1 slider-item-2 ">
                               <a href=""><h3 class="text-center mt-5">Xem Tất Cả</h3></a>
                             </div>
@@ -270,5 +193,5 @@
              </div> 
             
           </div>
-
+ 
           <!-- end-conten-slider -->

@@ -1,11 +1,12 @@
 <?php include('header.php');
 $table = new book();
-$results=$table->getall_new();
+$results=$table->getall_view();
 
 ?>
 <?php include('navbar_books.php'); ?>
 
-    <div class="container">
+
+<div class="container">
 		<div class="margin-top">
 			<div class="row">	
 			<div class="span12">	
@@ -15,10 +16,10 @@ $results=$table->getall_new();
                                 </div>
 						<!--  -->
 								    <ul class="nav nav-pills">
-										<li   ><a href="books.php">All</a></li>
-										<li class="active"><a href="new_books.php">Sách Mới</a></li>
+										<li><a href="books.php">All</a></li>
+										<li><a href="new_books.php">Sách Mới</a></li>
 										<li><a href="old_books.php">sách cũ</a></li>	
-										<li><a href="hot_book.php">sách hot</a></li>	
+										<li class="active" ><a href="hot_book.php">sách hot</a></li>	
 									</ul>
 						<!--  -->
 						
@@ -32,6 +33,7 @@ $results=$table->getall_new();
                                     <tr>
 									    <th>Mã Sách</th>                                 
                                         <th>Tên Sách</th>                                 
+                                        <th>Tác Giả </th>                                 
                                         <th>Nhà xuất bản</th>
 										<th>Năm xuất bản</th>	
 										<th>Số trang</th>
@@ -40,7 +42,7 @@ $results=$table->getall_new();
 										<th>Mô tả</th>
 										<th>ảnh</th>
 										<th>Tài liệu</th>
-										<th>Chỉnh sửa</th>
+										<th>Lượt xem</th>
 			
                                     </tr>
                                 </thead>
@@ -51,6 +53,7 @@ $results=$table->getall_new();
 								<tr>
 									<td><?php echo $row['ma_sach']; ?></td>
 									<td><?php echo $row['ten_sach']; ?></td>
+									<td><?php echo $row['tac_gia']; ?></td>
 									<td><?php echo $row['nha_xuat_ban']; ?></td>
 									<td><?php echo $row['nam_xuat_ban']; ?></td>
 									<td><?php echo $row['so_trang']; ?></td>
@@ -60,15 +63,9 @@ $results=$table->getall_new();
 									<td > <img src="../librarian/upload/<?php echo $row['anh']; ?>" alt="anh" style=" width:50px "></td>
 									<td><?php echo $row['tai_lieu']; ?></td>
 
-									<!--  -->
-
-									<td class="action">
-                                        <a rel="tooltip" href="delete_books.php?ma_sach=<?php echo $row['ma_sach']; ?>" class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
-									
-
-										<a  rel="tooltip" href="edit_book.php?ma_sach=<?php echo $row['ma_sach'] ?>" class="btn btn-success" ><i class="icon-pencil icon-large"></i></a>
-										
-                                    </td>
+								           
+                                        <td><?php echo $row['luot_xem']; ?></td>
+                                    
 
 
 								</tr>
@@ -96,3 +93,15 @@ $results=$table->getall_new();
 		</div>
     </div>
 <?php include('footer.php') ?>
+
+
+
+
+
+
+
+
+
+
+
+

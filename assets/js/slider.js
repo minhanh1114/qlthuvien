@@ -4,7 +4,7 @@ window.addEventListener("load", function(){
     const sliderItems1 =document.querySelectorAll(".slider-item-1");
     const nextBtn1 = document.querySelector(".slider-next_1");
     const prevBtn1 = document.querySelector(".slider-prev_1");
-    const dotItem1 = document.querySelectorAll(".slider-dot-item");
+    const dotItems1 = document.querySelectorAll(".slider-dot-item");
     const sliderItemWidth1 = sliderItems1[0].offsetWidth;
     const slidesLengtth1 =sliderItems1.length;
     let postionx = 0;
@@ -16,6 +16,7 @@ window.addEventListener("load", function(){
         handleChangeSlide(-1);
     
     });
+    
                 function handleChangeSlide(direction)
             {   
                 if(direction == 1)

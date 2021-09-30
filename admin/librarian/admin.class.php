@@ -12,6 +12,14 @@ class admin extends connection_db
         $sql = "select * from admin";
         return $this->query($sql);
     }
+    function login($user,$pass)
+    {
+        $sql = "select * from admin where user = '$user' and pass= '$pass' ";
+        $result = $this->no_query_1($sql);
+        $row = mysqli_num_rows($result);
+        return $row;
+        
+    }
     function getall_admin_user()
     {
         $sql = "SELECT * FROM admin WHERE user = '$this->user' ";

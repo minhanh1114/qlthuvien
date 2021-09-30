@@ -1,0 +1,10 @@
+code trang book hot (v)
+code trang view_search 
+
+
+ ** sub_menu **
+ cây thư mục id ==1
+ {
+     truy vấn cả có dấu và không có dấu 
+     $test 1(chưa xử lí đấu) và $test(đã xử lí dấu tiếng việt)
+ } 
