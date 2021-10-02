@@ -167,7 +167,9 @@
   object-fit: cover;
   
 }
+ /* chân trang */
 .footer{
+  margin-top: 45px;
   width: 100%;
   height: 300px;
   border-top: 5px solid #C2002F;
@@ -232,5 +234,53 @@ padding-top: 20px;
   background-color: #45403C;
   color: white;
 }
+/* web 2  */
+.catalog{
+  width: 100%;
+  height: 500px;
+  background: url(../images/catalog_search.jpg);
+  background-size:auto;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+.catalog::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  background-color: #00567E;
+  opacity: 0.9;
+}
 
+.catalog_content{
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(50%);
+  transform: translateY(25%);
+  z-index: 3;
+}
+.catalog_content  h1{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: aliceblue;
+  text-transform: capitalize;
+}
 
+.catalog_content form{
+  display: flex;
+  width: 50%;
+  
+  transform: translateX(50%);
+
+}
+.catalog_content form button{
+ font-size: 22px;
+  padding: 0px 30px;
+  
+
+}

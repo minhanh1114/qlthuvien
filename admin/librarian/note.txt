@@ -8,3 +8,8 @@ code trang view_search
      truy vấn cả có dấu và không có dấu 
      $test 1(chưa xử lí đấu) và $test(đã xử lí dấu tiếng việt)
  } 
+ * view *
+ {
+     adđ sách tự động add view =0
+     xem add+1
+ }

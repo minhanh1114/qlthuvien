@@ -1,6 +1,9 @@
 <?php
 include 'header.php';
 ?>
+<?php 
+include 'search_top.php';
+?>
 <?php
 include 'nav.php';
 ?>
@@ -76,7 +79,7 @@ foreach($results as $row)
             {
               $test1 = $result_id['sub_menuname'];
               $test = $book->stripUnicode($result_id['sub_menuname']);
-              echo $test1 . $test ;
+              
                 $get_books = $book->getall_tacgia($test, $test1);
                 foreach($get_books as $get_b) {
                 ?>

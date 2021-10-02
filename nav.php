@@ -6,9 +6,15 @@
   <!-- Links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Mục Lục</a>
+            <a class="nav-link" href="index.php">Trang Chủ</a>
           </li>
           <!-- Dropdown -->
+          <li class="nav-item ">
+            <a class="nav-link " href="catalog.php" id="navbardrop" >
+              Mục Lục
+            </a>
+            
+          </li>
           <li class="nav-item ">
             <a class="nav-link " href="add_menu.php" id="navbardrop" >
               Duyệt Qua

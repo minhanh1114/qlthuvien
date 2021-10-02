@@ -1,6 +1,7 @@
 <?php 
 include 'header.php';
 ?>
+<?php include 'search_top.php'?>
 <?php
 include 'nav.php';
 ?>
