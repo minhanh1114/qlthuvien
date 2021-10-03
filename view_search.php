@@ -15,15 +15,20 @@ if(isset($_POST['submit_search']))
 {
     $index = $_POST['search_select'];
     $content = $_POST['search_content'];
-    if($index==1)
+    if(empty($content))
+    {
+     die("không có giá trị ");
+    }
+    // die($index);
+    if($index== '1')
     {
         //  tìm kiếm theo thể loại
         $code =   " like " . "'%" . $content . "%'";
         $results_search = $book->search_theloai($code);
     }
-    else if($index==0)
+    else if($index == '0')
     {
-        //  tìm kiếm theo thể loại
+        //  tìm kiếm all 
         $code =   "'%" . $content . "%'";
         $results_search = $book->search_all($code);
     }
@@ -34,8 +39,9 @@ if(isset($_POST['submit_search']))
         
         $results_search = $book->search_sach($code);
     }
+    // kiểm tra rỗng
 
-    if(empty($results_search))
+    if(empty($results_search) )
     {
         echo ('<h2 class ="ml-5 mr-5 mt-5">'.'Từ khóa tìm kiếm: ' .$content . '<span class ="text-danger">'.' Không có kết quả' .'<span>'.'</h2>');
         
@@ -46,8 +52,8 @@ if(isset($_POST['submit_search']))
 
     }
 }
-        //  xử lí khi  submit catalog
-    else if (isset($_POST['buttton_catalog']))
+     //  xử lí khi  submit catalog
+else if (isset($_POST['buttton_catalog']))
     {
         $content = $_POST['search_content'];
         $content = "'%" . $content . "%'";
@@ -61,7 +67,7 @@ if(isset($_POST['submit_search']))
 
     <!-- thanh nav trái  -->
 
-<div class="col-sm-3">
+<div class="col-sm-4">
 <div id="horizontalmenu">
 <?php
 $results = $menu->getall_menu_tbl();
@@ -90,7 +96,7 @@ foreach($results as $row)
   </ul>
         </div>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-8">
 
         <!-- load dữ liệu thông tin về sách " thanh phải " -->
        <?php  

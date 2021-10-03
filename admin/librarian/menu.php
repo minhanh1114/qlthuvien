@@ -21,7 +21,41 @@ if(isset($_POST['submit_menu_tbl']))
  ?>
 <?php include('navbar_menu.php'); ?>
 
+<div class="row">
 
+
+      
+<div id="horizontalmenu">
+    <?php
+    $results = $load_menu->getall_menu_tbl();
+    foreach($results as $row)
+    {
+      $menu_id = $row['id'];
+    ?>
+          
+       <ul class="list_menu"><li > <button class="submit_<?php echo $menu_id ?>"><?php echo $row['menu_name']; ?> <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+            
+        <ul class="sub_menu<?php echo $menu_id ?>">
+      <?php
+        $results_submenu = $load_menu->get_subname_with_menu($menu_id);
+        foreach($results_submenu as $sm)
+        {
+          ?>
+        <li><a href="sub_menu.php?id=<?php echo $sm['id'] ?>" class="text-dark text-capitalize"><?php echo $sm['sub_menuname'];?> </a> </li>
+        <?php  } ?>
+        </ul>
+      
+        </li>
+
+        <?php } ?>
+          
+      </ul>
+    </div>
+    
+
+
+
+<div class="col-sm-6">
 <form action="" method="post" name="form">
 
 <table width="30%" border="2" cellspacing="0" cellpadding="10" style="margin-top:100px; margin-left: 560px">
@@ -74,5 +108,9 @@ if(isset($_POST['submit_menu_tbl']))
     </tr>
 </table>
 </form>
+</div>
+
+
+</div>
 
 <?php include('footer.php') ?>

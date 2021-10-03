@@ -1,5 +1,5 @@
 <?php
-include 'header_2.php';
+include 'header.php';
 ?>
 <?php 
 include 'search_top.php';

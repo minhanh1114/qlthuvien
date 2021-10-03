@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('header_2.php'); ?>
 
 <?php include('navbar_dashboard.php'); ?>
     <div class="container">
@@ -8,8 +8,10 @@
                        
 				<?php include('slider.php'); ?>
 				
-				
 			</div>		
 			</div>
 		</div>
     </div>
+	<?php
+	include 'footer_2.php';	
+	?>

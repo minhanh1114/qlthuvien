@@ -12,6 +12,10 @@
 			<link rel="stylesheet" type="text/css" href="../css/style.css" />
 			<link rel="stylesheet" type="text/css" href="../css/DT_bootstrap.css" />
 			<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+			<link rel="stylesheet" href="">
+			<link rel="stylesheet" href="../css/normalize.css">
+			
+			
 
 	<!-- js -->			
     <script src="../js/jquery-1.7.2.min.js"></script>
@@ -111,8 +115,6 @@ if(isset($_POST['submit_add_admin']))
 	$insert->inser_admin();
 	header('location: admin.php');
 }
-else
- echo "lỗi rồi";
 ?>
 
 
