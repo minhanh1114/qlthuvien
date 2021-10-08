@@ -65,7 +65,7 @@ foreach($results as $row)
                     </a>
                   </div>
                   <div class="col-sm-8">
-                  <h1><?php echo $get_b['ten_sach'] ?> </h1>
+                  <h1 class="text-capitalize"><?php echo $get_b['ten_sach'] ?> </h1>
                     <h3> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $get_b['tac_gia'] ?> </h3>
                     <p> <i class="fa fa-clone" aria-hidden="true"> </i>  <?php echo $get_b['mo_ta'] ?>  </p>
                     <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
@@ -94,7 +94,7 @@ foreach($results as $row)
                     </a>
                   </div>
                   <div class="col-sm-8">
-                  <h1><?php echo $get_b['ten_sach'] ?> </h1>
+                  <h1 class="text-capitalize"><?php echo $get_b['ten_sach'] ?> </h1>
                     <h3> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $get_b['tac_gia'] ?> </h3>
                     <p><i class="fa fa-clone" aria-hidden="true"></i> <?php echo $get_b['mo_ta'] ?>  </p>
                     <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
@@ -123,7 +123,7 @@ foreach($results as $row)
                     </a>
                   </div>
                   <div class="col-sm-8">
-                    <h1><?php echo $get_b['ten_sach'] ?> </h1>
+                    <h1 class="text-capitalize"><?php echo $get_b['ten_sach'] ?> </h1>
                     <h3> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $get_b['tac_gia'] ?> </h3>
                     <p><i class="fa fa-clone" aria-hidden="true"></i> <?php echo $get_b['mo_ta'] ?>  </p>
                     <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>

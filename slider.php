@@ -26,7 +26,7 @@
                                 <a href="view_book.php?id=<?php echo $row['ma_sach'] ?>">
                                   <img src="./admin/librarian/upload/<?php echo $row['anh']; ?>" alt="">
                                  
-                                  <h3><?php echo $row['ten_sach']; ?></h3> </a>
+                                  <h3 class="text-capitalize"><?php echo $row['ten_sach']; ?></h3> </a>
                                   <div class="mo_ta"><?php echo $row['mo_ta']; ?></div>
                                                               
                               </div>
@@ -80,7 +80,7 @@
                               <a href="view_book.php?id=<?php echo $row['ma_sach'] ?>">
                                   <img src="./admin/librarian/upload/<?php echo $row['anh']; ?>" alt="">
                                  
-                                  <h3><?php echo $row['ten_sach']; ?></h3> </a>
+                                  <h3 class="text-capitalize"><?php echo $row['ten_sach']; ?></h3> </a>
                                   <div><?php echo $row['mo_ta']; ?></div>
                                                               
                               </div>
@@ -133,7 +133,7 @@
                                 <a href="view_book.php?id=<?php echo $row['ma_sach'] ?>">
                                       <img src="./admin/librarian/upload/<?php echo $row['anh']; ?>" alt="">
                                     
-                                      <h3><?php echo $row['ten_sach']; ?></h3> </a>
+                                      <h3 class="text-capitalize"><?php echo $row['ten_sach']; ?></h3> </a>
                                       <div><?php echo $row['mo_ta']; ?></div>
                                                               
                             </div>

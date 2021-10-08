@@ -73,7 +73,7 @@ class book extends connection_db
 	// code slider
 	function getall_11(){
 		$sql = "select * from ((sach INNER JOIN the_loai 
-		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) ORDER BY thong_tin.luot_xem DESC limit 11 ";
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) where sach.tinh_trang like 'mới' or sach.tinh_trang like 'moi' ORDER BY thong_tin.luot_xem DESC limit 11 ";
 		return $this->query($sql);
 	
 	}
@@ -199,25 +199,27 @@ class book extends connection_db
 	}
 	// tìm kiếm theo tên sách , nhà xuât bản 
 	function search_sach($code){
-		$sql = 'select * from sach where ' . $code ;
+		$sql = 'select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach)  where ' . $code ;
 		return $this->query($sql);
 		
 	
 	}
 	// tìm kiếm theo thể loại
 	function search_theloai($code){
-		$sql = "select * from sach INNER JOIN the_loai
-		ON sach.ma_sach = the_loai.ma_sach where  the_loai.the_loai " . $code ;
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach)  where  the_loai.the_loai " . $code ;
 		return $this->query($sql);
 	
 	}
 	// tìm kiếm từ khóa catalog
 	function search_all($content)
 	{
+		$content_2 = $this->stripUnicode($content);
 		$sql ="select * from ((sach INNER JOIN the_loai 
 		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) 
 		where  
-		the_loai.the_loai like " . $content . " or "." sach.ten_sach like " . $content . " or " . "sach.tac_gia like " .$content . " or " . "sach.nha_xuat_ban like " .$content ;
+		the_loai.the_loai like " . $content . " or "." sach.ten_sach like " . $content . " or " . "sach.tac_gia like " .$content . " or " . "sach.nha_xuat_ban like " .$content . " or "."the_loai.the_loai like " . $content_2 . " or "." sach.ten_sach like " . $content_2 . " or " . "sach.tac_gia like " .$content_2 . " or " . "sach.nha_xuat_ban like " .$content_2  ;
 		return $this->query($sql);
 	}
 }

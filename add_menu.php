@@ -62,7 +62,7 @@ foreach($results as $row)
      
       </div>
       <div class="col-sm-9 " >
-        <h3><?php echo $book['ten_sach'] ?> </h3>
+        <h3 class="text-capitalize"><?php echo $book['ten_sach'] ?> </h3>
         <p> <i class="fa fa-user" aria-hidden="true"></i>Tác giả: <?php echo $book['tac_gia'] ?></p>
         <p><i class="fa fa-clone" aria-hidden="true"></i> <?php echo $book['mo_ta'] ?></p>
         <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $book['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"></i> <?php echo $book['nha_xuat_ban'] ?></span> | <span> <i class="fa fa-bars" aria-hidden="true"></i>  <?php echo $book['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $book['luot_xem'] ?>  </p>

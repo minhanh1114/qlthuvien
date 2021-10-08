@@ -103,19 +103,19 @@ foreach($results as $row)
         foreach($results_search as $get_b) {
                 ?>
 
-                        <div class="row">
+                        <div class="row border border-bottom-1">
                         <div class="col-sm-4">
                             <a href="view_book.php?id=<?php echo $get_b['ma_sach'] ?>">
                             <img src="./admin/librarian/upload/<?php echo $get_b['anh'] ?>" alt="">
                             </a>
                         </div>
                         <div class="col-sm-8">
-                            <h1><?php echo $get_b['ten_sach'] ?> </h1>
-                            <p> <?php echo $get_b['mo_ta'] ?>  </p>
+                            <h1 class="text-capitalize"><?php echo $get_b['ten_sach'] ?> </h1>
+                            <p> <i class="fa fa-clone" aria-hidden="true"></i> <?php echo $get_b['mo_ta'] ?>  </p>
                             <div>
-                                <span>Tác giả : <?php echo $get_b['tac_gia'] ?> | </span>
-                                <span> Nhà xuất bản: <?php echo $get_b['nha_xuat_ban'] ?> </span>
-                            <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span><?php echo $get_b['nha_xuat_ban'] ?></span> | <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
+                                <span>Tác giả : <?php echo $get_b['tac_gia'] ?></span>
+                    <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
+                            
 
                             </div>
                         </div>

@@ -16,7 +16,7 @@ if(isset($_GET['id']))
 <div class="row text-drank" >
     <div class="col-sm-3">
         <img src="./admin/librarian/upload/<?php echo $results['anh'] ?>" alt="">
-        <h2> <?php echo $results['ten_sach'] ?></h2>
+        <h2 class="text-capitalize"> <?php echo $results['ten_sach'] ?></h2>
         <h3> Tác giả: <?php echo $results['tac_gia'] ?></h3>
         <p> Tóm tắt: <?php echo $results['mo_ta'] ?></p>
     </div>
