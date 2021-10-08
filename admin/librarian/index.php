@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <?php include('header.php'); 
 $dang_nhap = new admin();
 
@@ -50,6 +54,7 @@ $dang_nhap = new admin();
 								$num_row=$dang_nhap->login($username,$password);
 															
 									if( $num_row > 0 ) {
+	    								$_SESSION["user"] = $username;								
 										header('location:dashboard.php');
 								
 									}

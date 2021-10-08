@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["user"]))
+{
+	header('location: index.php');
+}
+?>
 <?php include('header.php'); 
  include('navbar_user_add.php');
 ?>
@@ -5,9 +12,6 @@
 
 
     
-	
-	
-
 	
 	<div id="add_user"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-body">

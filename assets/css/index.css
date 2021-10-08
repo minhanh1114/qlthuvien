@@ -261,11 +261,15 @@ background: rgba(238, 88, 243, 0.8) !important;
     transform: translateX(50%);
   
   }
-  .catalog_content form button{
+  .catalog_content form button
+  {
    font-size: 22px;
     padding: 0px 30px;
-    
-  
+  }
+  .mo_ta{
+      font-size: 18px;
+      line-height: 1.5;
+
   }
 
 

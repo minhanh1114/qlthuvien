@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["user"]))
+{
+	header('location: index.php');
+}
+?>
 <?php include('header_2.php'); ?>
 
 <?php include('navbar_dashboard.php'); ?>

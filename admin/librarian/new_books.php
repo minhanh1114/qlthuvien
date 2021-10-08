@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["user"]))
+{
+	header('location: index.php');
+}
+?>
 <?php include('header.php');
 $table = new book();
 $results=$table->getall_new();

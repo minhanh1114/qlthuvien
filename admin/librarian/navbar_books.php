@@ -15,7 +15,7 @@
 					
 					?>
 					<li   class="active"><a href="books.php"><i class="icon-book icon-large"></i>Books</a></li>
-				
+					<li><a href="menu.php"><i class="icon-book icon-large"></i>&nbsp;Menu</a></li>
 					<li><a href="#myModal" data-toggle="modal"><i class="icon-search icon-large"></i>&nbsp;Advance Search</a></li>
 					<!-- <li><a href="section.php"><i class="icon-group icon-large"></i>&nbsp;Sections</a></li> -->
 				

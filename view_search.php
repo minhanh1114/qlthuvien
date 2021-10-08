@@ -115,6 +115,8 @@ foreach($results as $row)
                             <div>
                                 <span>Tác giả : <?php echo $get_b['tac_gia'] ?> | </span>
                                 <span> Nhà xuất bản: <?php echo $get_b['nha_xuat_ban'] ?> </span>
+                            <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span><?php echo $get_b['nha_xuat_ban'] ?></span> | <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
+
                             </div>
                         </div>
                         </div>

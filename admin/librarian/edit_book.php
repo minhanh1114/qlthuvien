@@ -1,18 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION["user"]))
+{
+	header('location: index.php');
+}
+?>
 <?php 
 include 'header.php';
 
 $cap_nhat = new book();
-  $ma_sach="";
-  $ten_sach="";
-  $tac_gia ="";
-  $nha_xuat_ban="";
-  $nam_xuat_ban="";
-  $so_trang="";
-  $the_loai="";
-  $mo_ta="";
-  $tinh_trang="";
-  $anh="";
-  $tai_lieu="";
+ 
   if(isset($_GET['ma_sach']))
   {
 	$ma_sach= $_GET['ma_sach'];
@@ -36,36 +33,47 @@ $cap_nhat = new book();
 {
 
 	
-	$cap_nhat->ma_sach     = $_GET['ma_sach'];
-	$cap_nhat->ten_sach 	  = $_POST['ten_sach'];
-	$cap_nhat->tac_gia 	  =     $_POST['tac_gia'];
+	$cap_nhat->ma_sach = $_GET['ma_sach'];
+	$cap_nhat->ten_sach = $_POST['ten_sach'];
+	$cap_nhat->tac_gia = $_POST['tac_gia'];
 	$cap_nhat->nha_xuat_ban = $_POST['nha_xuat_ban'];
 	$cap_nhat->nam_xuat_ban = $_POST['nam_xuat_ban'];
-	$cap_nhat->so_trang 	  =   $_POST['so_trang'];	
-	$cap_nhat->the_loai 	  =   $_POST['the_loai'];	
-	$cap_nhat->tinh_trang   = $_POST['tinh_trang'];	
+	$cap_nhat->so_trang = $_POST['so_trang'];	
+	$cap_nhat->the_loai = $_POST['the_loai'];	
+	$cap_nhat->tinh_trang = $_POST['tinh_trang'];	
 	$cap_nhat->mo_ta = $_POST['mo_ta'];
 	// tên file ban đầu
 	$cap_nhat->anh = $anh;
-	$cap_nhat->tai_lieu=$tai_lieu;
+	$cap_nhat->tai_lieu = $tai_lieu;
 	// kiểm tra có file hay không
-	if(isset($_FILES['anh']) and isset($_FILES['du_lieu']) )
+
+	if(is_uploaded_file($_FILES['anh']['tmp_name']))
 	{
-	
-		$file_anh =$_FILES['anh'];
-		$cap_nhat->anh =$file_anh['name'];
+		$file_anh = $_FILES['anh'];
+		$cap_nhat->anh = $file_anh['name'];
+		
+		$cap_nhat->anh = $cap_nhat->stripUnicode($cap_nhat->anh);
+		
 		move_uploaded_file($file_anh['tmp_name'],'upload/'. $cap_nhat->anh);
+	}
+		
+	if(is_uploaded_file($_FILES['tai_lieu']['tmp_name']))
+	{
 		// tài liệu 
 		$file_tai_lieu = $_FILES['tai_lieu'];
 		$cap_nhat->tai_lieu =$file_tai_lieu['name'];
+
+		$cap_nhat->tai_lieu = $cap_nhat->stripUnicode($cap_nhat->tai_lieu);
+
 		move_uploaded_file($file_tai_lieu['tmp_name'],'upload/'. $cap_nhat->tai_lieu);
 
+
 	}
+	$cap_nhat->update();	
 	
 	//Thực thi ham update()	
-	 $cap_nhat->update();	
 	
-	//Quay về trang quản lý tài khoản (view)
+	
 	header("location: books.php");
 }
 	
@@ -158,7 +166,7 @@ $cap_nhat = new book();
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label" >tài liệu</label>
+			<label class="control-label" >Tài liệu</label>
 			<div class="controls">
 			<div class="row">
 			<input type="file" style="padding-right: 20px; margin-left:20px" name="tai_lieu" class="span1" >

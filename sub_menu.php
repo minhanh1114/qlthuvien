@@ -44,7 +44,7 @@ foreach($results as $row)
         <?php
         if(isset($_GET['id']))
         {
-            echo $_GET['id'];
+            
            $result_id = $menu->getList_sub_menu_id($_GET['id']);
             
           echo '<h1 class ="text-left text-dark text-capitalize">' . 'Chủ đề: ' .$result_id['sub_menuname']. '</h1>';
@@ -58,15 +58,18 @@ foreach($results as $row)
                 foreach($get_books as $get_b) {
                 ?>
 
-                <div class="row">
+                <div class="row border border-bottom-1">
                   <div class="col-sm-4">
                   <a href="view_book.php?id=<?php echo $get_b['ma_sach'] ?>">
-                      <img src="./admin/librarian/upload/<?php echo $get_b['anh'] ?>" alt="">
+                      <img src="./admin/librarian/upload/<?php echo $get_b['anh'] ?>" alt="" style="width: 100%; height:300px; object-fit: cover ">
                     </a>
                   </div>
                   <div class="col-sm-8">
-                    <h1><?php echo $get_b['ten_sach'] ?> </h1>
-                    <p> <?php echo $get_b['mo_ta'] ?> </p>
+                  <h1><?php echo $get_b['ten_sach'] ?> </h1>
+                    <h3> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $get_b['tac_gia'] ?> </h3>
+                    <p> <i class="fa fa-clone" aria-hidden="true"> </i>  <?php echo $get_b['mo_ta'] ?>  </p>
+                    <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
+
 
                   </div>
                 </div>
@@ -91,8 +94,11 @@ foreach($results as $row)
                     </a>
                   </div>
                   <div class="col-sm-8">
-                    <h1><?php echo $get_b['ten_sach'] ?> </h1>
-                    <p> <?php echo $get_b['mo_ta'] ?>  </p>
+                  <h1><?php echo $get_b['ten_sach'] ?> </h1>
+                    <h3> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $get_b['tac_gia'] ?> </h3>
+                    <p><i class="fa fa-clone" aria-hidden="true"></i> <?php echo $get_b['mo_ta'] ?>  </p>
+                    <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
+
                   </div>
                 </div>
 
@@ -118,7 +124,10 @@ foreach($results as $row)
                   </div>
                   <div class="col-sm-8">
                     <h1><?php echo $get_b['ten_sach'] ?> </h1>
-                    <p> <?php echo $get_b['mo_ta'] ?>  </p>
+                    <h3> <i class="fa fa-user" aria-hidden="true"></i> <?php echo $get_b['tac_gia'] ?> </h3>
+                    <p><i class="fa fa-clone" aria-hidden="true"></i> <?php echo $get_b['mo_ta'] ?>  </p>
+                    <p>  <i class="fa fa-calendar" aria-hidden="true"></i> <span> <?php echo $get_b['nam_xuat_ban'] ?></span> | <span> <i class="fa fa-users" aria-hidden="true"> </i> <?php echo $get_b['nha_xuat_ban'] ?></span> | <i class="fa fa-bars" aria-hidden="true"></i> <span><?php echo $get_b['the_loai'] ?></span> | <i class="fa fa-eye" aria-hidden="true"> </i> <?php echo $get_b['luot_xem'] ?>  </p>
+
                   </div>
                 </div>
 

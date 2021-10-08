@@ -12,7 +12,9 @@
 					<li><a href="dashboard.php"><i class="icon-home icon-large"></i>&nbsp;Home</a></li>
 					<li  class="active"><a href=""><i class="icon-user icon-large"></i>&nbsp;Users</a></li>
 					<li><a href="books.php"><i class="icon-book icon-large"></i>&nbsp;Books</a></li>
-					<li><a href="#myModal" data-toggle="modal"><i class="icon-search icon-large"></i>&nbsp;Advance Search</a></li>
+					<li><a href="menu.php"><i class="icon-book icon-large"></i>&nbsp;Menu</a></li>
+					
+                    <li><a href="#myModal" data-toggle="modal"><i class="icon-search icon-large"></i>&nbsp;Advance Search</a></li>
 
 					<li><a href="logout.php" ><i class="icon-signout icon-large"></i>&nbsp;Logout</a></li>
 					</ul>

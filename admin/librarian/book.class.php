@@ -30,6 +30,16 @@ class book extends connection_db
 			$str = preg_replace("/($uni)/i",$nonUnicode,$str);
 		return $str;
 	}
+
+	function replaceAll($text) { 
+		// lower string 
+		// $text = strtolower(htmlentities($text)); 
+		$text = str_replace(get_html_translation_table(), "-", $text);
+		$text = str_replace(" ", "-", $text);
+		$text = preg_replace("/[-]+/i", "-", $text);
+		return $text;
+	}
+	//  $$ SELECT column FROM table ORDER BY column DESC LIMIT 7,10; $$$
 	
 	function getall(){
 		$sql = "select * from sach INNER JOIN the_loai
@@ -41,22 +51,47 @@ class book extends connection_db
 	function getall_view(){
 		$sql = "select * from ((sach INNER JOIN the_loai
 		ON sach.ma_sach = the_loai.ma_sach) 
-		 INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach)";
+		 INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) limit 1,10";
 		return $this->query($sql);
 	
 	}
+	function getall_view_2(){
+		$sql = "select * from ((sach INNER JOIN the_loai
+		ON sach.ma_sach = the_loai.ma_sach) 
+		 INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) limit 11,21";
+		return $this->query($sql);
+	
+	}
+	function getall_view_3(){
+		$sql = "select * from ((sach INNER JOIN the_loai
+		ON sach.ma_sach = the_loai.ma_sach) 
+		 INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) limit 22,32";
+		return $this->query($sql);
+	
+	}
+	
+	// code slider
 	function getall_11(){
-		$sql = "select * from sach INNER JOIN the_loai
-		ON sach.ma_sach = the_loai.ma_sach limit 11 ";
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) ORDER BY thong_tin.luot_xem DESC limit 11 ";
 		return $this->query($sql);
 	
 	}
 	function getall_baby_11(){
-		$sql = "select * from sach INNER JOIN the_loai
-		ON sach.ma_sach = the_loai.ma_sach where the_loai.the_loai = 'tre em' limit 11 ";
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) where the_loai.the_loai like 'tre em' or the_loai.the_loai like 'trẻ em' ORDER BY thong_tin.luot_xem DESC limit 11 ";
 		return $this->query($sql);
 	
 	}
+	function getall_thanhnien_11(){
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) where the_loai.the_loai like 'thanh nien' or the_loai.the_loai like 'thanh niên' ORDER BY thong_tin.luot_xem DESC limit 11 ";
+		return $this->query($sql);
+	
+	}
+
+	// end code slide 
+
 	function find_advance($truy_van){
 		$sql = "select * from sach where " .$truy_van;
 		return $this->query($sql);
@@ -81,19 +116,25 @@ class book extends connection_db
 		ON sach.ma_sach = the_loai.ma_sach where the_loai.ma_sach = '$ma_sach' ";
 		return $this->query1($sql);
 	}
+		// SELECT Donhang.DonhangID, Khachhang.HoTen, Shippers.Hoten AS TenShipper
+		// FROM ((Donhang
+		// INNER JOIN Khachhang ON Donhang.KhachhangID = Khachhang.KhachhangID)
+		// INNER JOIN Shippers ON Donhang.ShipperID = Shippers.ShipperID)
 	function getall_theloai($name_theloai , $name_theloai1){
-		$sql = "select * from sach INNER JOIN the_loai
-		ON sach.ma_sach = the_loai.ma_sach where the_loai.the_loai = '$name_theloai' or the_loai.the_loai = '$name_theloai1' ";
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach)  where the_loai.the_loai like '$name_theloai' or the_loai.the_loai like '$name_theloai1' ";
 		return $this->query($sql);
 	
 	}
 	function getall_tacgia($name_tacgia, $name_tacgia1){
-		$sql = "select * from sach where tac_gia = '$name_tacgia' or tac_gia = '$name_tacgia1' ";
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach)  where tac_gia = '$name_tacgia' or tac_gia = '$name_tacgia1' ";
 		return $this->query($sql);
 	
 	}
 	function getall_nhaxuatban($name_xuatban, $name_xuatban1){
-		$sql = "select * from sach where nha_xuat_ban = '$name_xuatban' or nha_xuat_ban = '$name_xuatban1' ";
+		$sql = "select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) where nha_xuat_ban = '$name_xuatban' or nha_xuat_ban = '$name_xuatban1' ";
 		return $this->query($sql);
 	
 	}
@@ -141,8 +182,8 @@ class book extends connection_db
 	
 	$this->no_query($sql);
 
-	$sql_1 ="UPDATE `the_loai` SET `the_loai`='$this->the_loai' WHERE ma_sach = '$this->ma_sach' ";
-	$this->no_query($sql_1);
+	// $sql_1 ="UPDATE `the_loai` SET `the_loai`='$this->the_loai' WHERE ma_sach = '$this->ma_sach' ";
+	// $this->no_query($sql_1);
 	}
 	function  load_book_hot()
 	{
@@ -173,8 +214,8 @@ class book extends connection_db
 	// tìm kiếm từ khóa catalog
 	function search_all($content)
 	{
-		$sql ="select * from sach INNER JOIN the_loai
-		ON sach.ma_sach = the_loai.ma_sach 
+		$sql ="select * from ((sach INNER JOIN the_loai 
+		ON sach.ma_sach = the_loai.ma_sach) INNER JOIN thong_tin ON sach.ma_sach = thong_tin.ma_sach) 
 		where  
 		the_loai.the_loai like " . $content . " or "." sach.ten_sach like " . $content . " or " . "sach.tac_gia like " .$content . " or " . "sach.nha_xuat_ban like " .$content ;
 		return $this->query($sql);

@@ -79,7 +79,7 @@ if(isset($_POST['submit']))
 	$them->mo_ta =$_POST['mo_ta'];
 	$them->tinh_trang =$_POST['tinh_trang'];
 
-	if(isset($_FILES['anh']))
+	if(is_uploaded_file($_FILES['anh']['tmp_name']))
 	{
 		// ảnh
 		$file_anh =$_FILES['anh'];
@@ -88,20 +88,23 @@ if(isset($_POST['submit']))
 		$them->anh = $them->stripUnicode($them->anh);
 		move_uploaded_file($file_anh['tmp_name'],'upload/'. $them->anh);
 		
-		
+	}
+	if(is_uploaded_file($_FILES['tai_lieu']['tmp_name']))
+	{
 		// tài liệu 
 		$file_tai_lieu = $_FILES['tai_lieu'];
 		$them->tai_lieu =$file_tai_lieu['name'];
 	
-
+		// xử lí tiếng việt
 		$them->tai_lieu = $them->stripUnicode($them->tai_lieu);
+	
 		move_uploaded_file($file_tai_lieu['tmp_name'],'upload/'. $them->tai_lieu);
 
-		$them->insert();
-	
-		header('location:books.php');
+		
 	}
+	$them->insert();
 	
+	header('location:books.php');
 	
 
 }
